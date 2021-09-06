@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SpotiClient</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
+</head>
+
+<body onload="login_init()">
+    <div id="container">
+        <div style="display:none">
+
+            <!-- LOGIN FORM -->
+            <form id="login_form" name="login" action="javascript:login()">
+                <label for="uname">Username</label> <br>
+                <input type="text" placeholder="Enter Username" name="uname" required maxlength="20">
+                <br>
+                <label for="psw">Password</label> <br>
+                <input type="password" placeholder="Enter Password" name="psw" required maxlength="15">
+                
+                <label> <br>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me <br/>
+                </label>
+
+                <button id="login_btn" type="submit">Log in</button>
+            </form>
+
+            <span id="nyr">Not yet registered?</span>
+            <button id="logup_btn" onclick="showLogup()">Sign up</button>
+
+            <button id="backto_login" onclick="showLogin()" style="display:none">Return to login</button>
+
+            <!-- LOGUP FORM -->
+            <form id="logup_form" name="logup" action="javascript:signup()">
+                <label for="username">Username </label> <br>
+                <input type="text" placeholder="Pick a username" name="username" required maxlength="20">
+                <br>
+                <label for="email">Email </label> <br>
+                <input type="email" placeholder="you@example.com" name="email" required maxlength="50">
+                <br>
+                <label for="psw1">Password</label> <br>
+                <input type="password" placeholder="Create a password" name="psw1" required maxlength="15">
+                <br>
+                <label for="psw2">Confirm Password</label> <br>
+                <input type="password" placeholder="Write again password" name="psw2" required maxlength="15">
+                <br>
+                
+                <button id="logup" type="submit" onclick="return logupCheck()">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/requests.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</html>

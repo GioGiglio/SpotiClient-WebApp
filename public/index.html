@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>SpotiClient</title>
+        <!--
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+        -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
+    </head>
+
+    <!-- TODO: Spoticlient has Client Routing-->
+    
+    <body onload="init()">
+        <div id="container">
+            <nav>
+                <section id="navbar" class="col-12">
+                    <div>
+                        <a id="menu_hide_show" onclick="menuHideShow()" >Menu &dArr;</a>
+                        <a class="active" onclick="showMySongs(); menuHideShow()">MY SONGS</a>
+                        <a onclick="showAllSongs(); menuHideShow()">ALL SONGS</a>
+                        <a id="navbar_playlists" onclick="showPlaylists()">PLAYLISTS</a>
+                        <a id="navbar_friends" onclick="friendsModalShow()">FRIENDS</a>
+                        <input id="search_input" type="text" onkeyup="search_filter()">
+                        <a id="logoutBtn" onclick="logout()">Log out</a>
+                    </div>
+                </section>
+                
+                <div class="row">
+                <section id="tracks_list" class="col-9">
+                    <ul>
+                    </ul>
+                </section>
+                
+                <aside id="playlists" class="col-3">
+                    <span id="playlists_header">PLAYLIST</span>
+                    <button id="newPlaylistBtn" onclick="createPlaylistModal()">Create new</button>
+                    <ul>
+                        <!-- PLAYLISTS -->
+                        
+                    </ul>
+                    
+                    
+                </aside>
+            </div>
+
+            <!-- AddToPlaylist Modal -->
+            <div id="addToPlaylistModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <!-- Playlists list -->
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Add song.title to</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <!-- EditPlaylist Modal -->
+            <div id="editPlaylist" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="editPlaylistClose()">&times;</span>
+                    <h3>Select playlist.name songs</h3>
+                    <!-- <input type="checkbox"> elements -->
+                    <ul>
+                        
+                    </ul>
+                    
+                    <button>Done</button>
+                </div>
+            </div>
+
+            <!-- CreatePlaylist Modal-->
+            <div id="createPlaylist" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="createPlaylistClose()">&times;</span>
+                    <h3>Create new playlist</h3>
+                    Playlist name:
+                    <input type="text" name="playlist_name" placeholder="Your playlist name...">
+
+                    <button>Create</button>
+                </div>
+            </div>
+
+            <!-- Friends Modal -->
+            <div id="friendsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="friendsModalClose()">&times;</span>
+                    <h3>Friends</h3>
+                    <label>Add / Remove friend: </label>
+                    <input type="text" placeholder="Insert friend's username" maxlength="20">
+                    <button id="addFriendButton" onclick="addFriend()">Add</button>
+                    <button id="removeFriendButton" onclick="removeFriend()">Remove</button>
+
+                    <ul id="friendsList">
+                        <!-- Following friends list-->   
+                    </ul>
+                </div>
+            </div>
+
+
+
+            </nav>
+            <!-- PLAYER -->
+            <section id="player" class="col-12">
+                    <div id="player_image"></div>
+                    <img id="play_prev" onclick="play_prev()">
+                    <h3 id="player_title"></h3>
+                    <img id="play_next" onclick="play_next()">
+                    <audio controls id="music_player" class="col-8" controlsList="nodownload">
+                        
+                    </audio>
+                </section>
+        </div>
+    </body>
+    
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/protos.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/playlists.js"></script>
+    <script type="text/javascript" src="js/songs.js"></script>
+    <script type="text/javascript" src="js/requests.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</html>

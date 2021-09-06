@@ -1,0 +1,105 @@
+/* GLOBAL RULES */ 
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #263238;
+    
+    /* Make text UNSELECTABLE */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+body {
+    margin: 0;
+}
+
+#container {
+    margin:auto;
+    background: url('../media/login/background.jpeg');
+    background-size: cover;
+    height: 100vh;
+}
+
+form {
+    margin:auto;
+    width: 100%;
+    text-align: center;
+}
+
+#container > div {
+    margin:auto;
+    width: 40%;
+    background-color:white;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+}
+/*
+form > input, #login_btn {
+    padding: 6px 10px;
+    margin-bottom: 15px;
+}
+*/
+
+#login_btn, #logup {
+    margin-right: 20px;
+    background-color:#05a505;
+    color:white;
+    font-size:0.9em;
+}
+
+#logup_form {
+    display:none;
+}
+
+label {
+    text-align: right;
+    margin-right:15px;
+}
+
+form > input {
+    display: inline-block;
+    border:1px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #00b500b3;
+    color:white;
+    font-size:1em;
+}
+
+::placeholder{
+    color: white;
+}
+
+button {
+    border:0;
+    border-radius: 15px;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+#logup_btn {
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    #container > div {
+        width: 80%;
+    }
+
+    form > input {
+        display: inline-block;
+        border:1px solid black;
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 20px;
+        color:black;
+        font-size:1em;
+        text-align:center;
+    }
+    
+    ::placeholder{
+        color: rgb(95, 95, 95);
+    }
+}
