@@ -63,7 +63,9 @@ function addToPlaylistModal(element){
             // updatePlaylist serverside and DB
             var data = {
                 playlist_id: playlist.id,
-                to_add: [Number(selected_song_id)],
+                to_add: [Number(
+                     
+                    ed_song_id)],
                 to_remove: []
             };
 
@@ -246,7 +248,7 @@ function createPlaylistClose(){
  * @returns The song object having that id.
  */
 function songFromId(id){
-    return songs.filter(function(s){return s.id == id})[0];
+    return songs.filter(s => s.id === id)[0];
 }
 
 /**
@@ -255,7 +257,7 @@ function songFromId(id){
  * @returns The playlist object having that id.
  */
 function playlistFromId(id){
-    return playlists.filter(function(s){return s.id == id;})[0];
+    return playlists.filter(s => s.id === id)[0];
 }
 
 /**
