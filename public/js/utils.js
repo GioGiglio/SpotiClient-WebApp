@@ -63,9 +63,7 @@ function addToPlaylistModal(element){
             // updatePlaylist serverside and DB
             var data = {
                 playlist_id: playlist.id,
-                to_add: [Number(
-                     
-                    ed_song_id)],
+                to_add: [Number(selected_song_id)],
                 to_remove: []
             };
 
