@@ -246,7 +246,7 @@ function createPlaylistClose(){
  * @returns The song object having that id.
  */
 function songFromId(id){
-    return songs.filter(function(s){return s.id == id})[0];
+    return songs.filter(s => s.id === id)[0];
 }
 
 /**
@@ -255,7 +255,7 @@ function songFromId(id){
  * @returns The playlist object having that id.
  */
 function playlistFromId(id){
-    return playlists.filter(function(s){return s.id == id;})[0];
+    return playlists.filter(s => s.id === id)[0];
 }
 
 /**
